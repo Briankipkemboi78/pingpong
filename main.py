@@ -4,7 +4,6 @@ from ball import Ball
 from scoreboard import Scoreboard
 import time
 
-
 screen = Screen()
 screen.setup(width=800, height=600)
 screen.bgcolor("black")
@@ -16,13 +15,11 @@ l_paddle = Paddle((-370, 0))
 ball = Ball((370, 370))
 scoreboard = Scoreboard()
 
-
 screen.listen()
 screen.onkeypress(r_paddle.go_up, "Up")
 screen.onkeypress(r_paddle.go_down, "Down")
 screen.onkeypress(l_paddle.go_up, "w")
 screen.onkeypress(l_paddle.go_down, "s")
-
 
 game_is_on = True
 while game_is_on:
@@ -47,7 +44,5 @@ while game_is_on:
     if ball.xcor() < -370:
         ball.reset_position()
         scoreboard.r_point()
-
-
 
 screen.exitonclick()
